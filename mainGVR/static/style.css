@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров - Компьютеры</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Каталог товаров: Компьютеры</h1>
+    
+    <div class="container">
+        <h2>Настольные ПК</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="test.png" alt="DELL Vostro 3681 SFF">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">DELL Vostro 3681 SFF</div>
+                    <div class="product-specs">Intel Core i5, 8 ГБ RAM, Intel UHD Graphics 630, 256 ГБ SSD</div>
+                    <div class="product-price">45 990 ₽</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="test.png" alt="Lenovo IdeaCentre 3">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Lenovo IdeaCentre 3</div>
+                    <div class="product-specs">AMD Ryzen 5, 16 ГБ RAM, Radeon Graphics, 512 ГБ SSD</div>
+                    <div class="product-price">52 500 ₽</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="test.png" alt="ASUS ExpertCenter D5">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">ASUS ExpertCenter D5</div>
+                    <div class="product-specs">Intel Core i7, 32 ГБ RAM, NVIDIA GTX 1650, 1 ТБ SSD</div>
+                    <div class="product-price">89 990 ₽</div>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Ноутбуки</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="test.png" alt="HP EliteBook 840 G9">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">HP EliteBook 840 G9</div>
+                    <div class="product-specs">Intel Core i5, 16 ГБ RAM, 512 ГБ SSD, 14" FHD</div>
+                    <div class="product-price">78 500 ₽</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="test.png" alt="Lenovo Legion 5">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Lenovo Legion 5</div>
+                    <div class="product-specs">AMD Ryzen 7, RTX 4060, 16 ГБ RAM, 1 ТБ SSD, 15.6" QHD</div>
+                    <div class="product-price">124 990 ₽</div>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Периферия</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="test.png" alt="Xiaomi Wired Keyboard">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Xiaomi Wired Keyboard</div>
+                    <div class="product-specs">Механическая, проводная, RGB подсветка, USB</div>
+                    <div class="product-price">2 990 ₽</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="test.png" alt="Xiaomi Wireless Mouse 2">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Xiaomi Wireless Mouse 2</div>
+                    <div class="product-specs">Беспроводная, Dual-mode, 16000 DPI, USB/Bluetooth</div>
+                    <div class="product-price">1 890 ₽</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="test.png" alt="Fiero BHS-200">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Fiero BHS-200</div>
+                    <div class="product-specs">Компьютерные колонки, 2.0, 6 Вт, USB питание</div>
+                    <div class="product-price">1 490 ₽</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
