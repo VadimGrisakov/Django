@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Каталог товаров - Компьютеры{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>TechShop</h1>
+                <p>Каталог компьютерной техники</p>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="{% url 'main' %}">Главная</a></li>
+                    {% if user.is_authenticated %}
+                        <li><span>Привет, {{ user.username }}!</span></li>
+                        <li><a href="{% url 'logout' %}">Выйти</a></li>
+                        <li><button class="cart-btn">Корзина</button></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Войти</a></li>
+                        <li><a href="{% url 'register' %}">Регистрация</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 TechShop. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <style>
+        .header-container {
+            background: #2c3e50;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        
+        .logo p {
+            margin: 5px 0 0 0;
+            color: #ecf0f1;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            background: #34495e;
+        }
+        
+        .cart-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .cart-btn:hover {
+            background: #c0392b;
+        }
+        
+        footer {
+            background: #ecf0f1;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</body>
+</html>

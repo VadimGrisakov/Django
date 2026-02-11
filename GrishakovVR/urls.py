@@ -14,11 +14,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth import views as auth_views
 from mainGVR import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/', views.MainFunc),
+    path('', views.MainFunc, name='main'),  # Изменено: главная страница по корневому URL
+    path('main/', views.MainFunc, name='main_alt'),  # Альтернативный путь
+    path('register/', views.RegFunc, name='register'),  # Исправлено: убрано .as_view()
+    path('login/', views.login_view, name='login'),  # Исправлено: используем свою функцию
+    path('logout/', views.logout_view, name='logout'),  # Исправлено: используем свою функцию
 ]

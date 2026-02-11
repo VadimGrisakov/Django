@@ -1,39 +1,47 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог товаров - Компьютеры</title>
-    <link rel="stylesheet" href="{% static style.css%}">
-</head>
-<body>
+{% extends 'header.html' %}
+
+{% block content %}
+<div class="catalog">
     <h1>Каталог товаров: Компьютеры</h1>
     
-    <h2>Настольные ПК</h2>
-    <ul>
-        <li>DELL Vostro 3681 SFF (Intel Core i5, 8 ГБ RAM, Intel UHD Graphics 630)</li>[web:5]
-        <li>Lenovo IdeaCentre 3 07ADA05</li>[web:5]
-        <li>ASUS ExpertCenter D5</li>[web:5]
-        <li>HP M01 Mini-Tower</li>[web:5]
-        <li>Lenovo Legion T5 26IOB6 (Intel Core i7, RTX 3070, 16 ГБ RAM)</li>[web:5]
-        <li>Fujitsu ESPRIMO Q5010 MT (Intel Core i3, 8 ГБ RAM)</li>[web:5]
-    </ul>
-    
-    <h2>Ноутбуки</h2>
-    <ul>
-        <li>Asus Mini tower S500MC-5114000190</li>[web:7]
-        <li>HP EliteDesk 800 G9 TWR</li>[web:7]
-    </ul>
-    
-    <h2>Периферия</h2>
-    <ul>
-        <li>Клавиатура проводная Xiaomi wired mechanical keyboard</li>[memory:4]  <!-- из памяти пользователя -->
-        <li>Мышь беспроводная Xiaomi Dual-mode Wireless Mouse 2</li>[memory:4]
-        <li>Мышь беспроводная Xiaomi Wireless Mouse 3</li>[memory:4]
-        <li>Колонки Fiero BHS-200 чёрный</li>[memory:4]
-        <li>ПК DEXP Atlas H482</li>[memory:4]
-    </ul>
-    
-</body>
-</html>
+    <div class="products-grid">
+        <!-- Настольные ПК -->
+        <h2>Настольные ПК</h2>
+        {% for pc in desktop_pcs %}
+        <div class="product-card">
+            <div class="product-image">
+                <img src="static/test.png" alt="{{ pc.name }}">
+            </div>
+            <div class="product-info">
+                <div class="product-name">{{ pc.name }}</div>
+                <div class="product-specs">{{ pc.specs }}</div>
+                <div class="product-price">{{ pc.price }} ₽</div>
+                {% if user.is_authenticated %}
+                <button class="add-to-cart">Добавить в корзину</button>
+                {% else %}
+                <button class="add-to-cart" disabled>Войдите для покупки</button>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Временные данные для отображения -->
+<script>
+    // В реальном проекте эти данные должны приходить из Django контекста
+    document.addEventListener('DOMContentLoaded', function() {
+        const desktopPcs = [
+            {name: 'DELL Vostro 3681 SFF', specs: 'Intel Core i5, 8 ГБ RAM, Intel UHD Graphics 630', price: '45 990'},
+            {name: 'Lenovo IdeaCentre 3 07ADA05', specs: 'AMD Ryzen 5, 8 ГБ RAM, 512 ГБ SSD', price: '39 990'},
+            {name: 'ASUS ExpertCenter D5', specs: 'Intel Core i7, 16 ГБ RAM, 1 ТБ HDD + 256 ГБ SSD', price: '67 490'},
+            {name: 'HP M01 Mini-Tower', specs: 'Intel Core i3, 8 ГБ RAM, 256 ГБ SSD', price: '34 990'},
+            {name: 'Lenovo Legion T5 26IOB6', specs: 'Intel Core i7, RTX 3070, 16 ГБ RAM', price: '129 990'},
+            {name: 'Fujitsu ESPRIMO Q5010 MT', specs: 'Intel Core i3, 8 ГБ RAM, 256 ГБ SSD', price: '32 490'}
+        ];
+        
+        const grid = document.querySelector('.products-grid');
+        // Здесь можно динамически добавить товары
+    });
+</script>
+{% endblock %}

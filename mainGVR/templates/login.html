@@ -1,0 +1,58 @@
+{% extends 'header.html' %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+<div class="auth-form">
+    <h2>Вход в систему</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="submit-btn">Войти</button>
+    </form>
+    <p>Нет аккаунта? <a href="{% url 'register' %}">Зарегистрируйтесь</a></p>
+</div>
+
+<style>
+    .auth-form {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .auth-form h2 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 30px;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .submit-btn:hover {
+        background: #2980b9;
+    }
+    
+    .auth-form p {
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .auth-form a {
+        color: #3498db;
+        text-decoration: none;
+    }
+</style>
+{% endblock %}
